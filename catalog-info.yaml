@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lhslgm5cq-go-gitops
+  description: This is GitOps manifest for lhslgm5cq-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=lhslgm5cq-go
+    backstage.io/kubernetes-id: lhslgm5cq-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: lhslgm5cq-go-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lhslgm5cq-go
